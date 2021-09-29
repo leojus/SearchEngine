@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="search.js" defer></script>
+    <title>Pixabay Search Engine</title>
+</head>
+
+<body>
+    <h1>Pixabay Search Engine</h1>
+
+    <form>
+        <input type="search" id="search_text" placeholder="Enter your search">
+        <select id="color_select">
+            <option id="any">Any color</option>
+            <option id="red">Red</option>
+            <option id="blue">Blue</option>
+            <option id="green">Green</option>
+            <option id="black">Black</option>
+            <option id="yellow">Yellow</option>
+            <option id="white">white</option>
+        </select>
+        <button type="submit" id="submit_button">Search</button>
+    </form>
+
+    <div id="search_results">
+
+    </div>
+
+    <button type="button" id="previous" class="page_buttons" hidden>Previous</button>
+    <button type="button" id="next" class="page_buttons" hidden>Next</button>
+
+</body>
+
+</html>
