@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 28px;
+}
+
+body {
+    text-align: center;
+    background-color: burlywood;
+}
+
+h1 {
+    font-family: 'Brush Script MT', cursive;
+    margin: 10px;
+    font-size: 2.5rem;
+}
+
+#search_text {
+    height: 1.5rem;
+    width: 30%;
+    font-size: 1rem;
+}
+
+#color_select {
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+#submit_button {
+    height: 1.5rem;
+    font-size: 1rem;
+}
+
+#search_results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+#search_results div {
+    margin: 10px;
+    max-width: 300px;
+}
+
+#search_results img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    margin: 10px;
+}
+
+#search_results p {
+    font-size: 0.7rem;
+}
+
+.page_buttons {
+    height: 1.5rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 639px) {
+    html {
+        font-size: 20px;
+    }
+    #search_results p {
+        font-size: 1rem;
+    }
+}
