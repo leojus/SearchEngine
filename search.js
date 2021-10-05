@@ -4,13 +4,17 @@ const nextButton = document.getElementById("next");
 const prevButton = document.getElementById("previous");
 // Declaring a varaible to keep count of the current page
 let page;
+let searchTerm;
+let color;
 
 // Code that runs when pressing the "search" button
 form.onsubmit = event => {
+    searchTerm = form.elements.search_text.value;
+    color = form.elements.color_select.value.toLowerCase();
     page = 1;
     event.preventDefault();
     clearList();
-    search();
+    search(searchTerm, color);
 
 };;
 
@@ -25,18 +29,16 @@ function clearList() {
 }
 
 // A function connecting to the api and drawing the page
-async function search() {
+async function search(search_term, color) {
 
 
-    const searchedText = form.elements.search_text.value;
-    const selectedColor = form.elements.color_select.value.toLowerCase();
 
     const apiKey = "23503426-95c41653fd2b45b3725cf6f10"
 
     const params = new URLSearchParams({
         key: apiKey,
-        q: searchedText,
-        colors: selectedColor,
+        q: search_term,
+        colors: color,
         per_page: 10,
         page: page
     });
@@ -70,6 +72,10 @@ async function search() {
             const nextButton = document.getElementById("next");
             nextButton.disabled = true;
         }
+
+    } else {
+        document.getElementById("previous").style.display = 'none';
+        document.getElementById("next").style.display = 'none';
 
     }
 
@@ -111,7 +117,7 @@ async function search() {
     nextButton.onclick = event => {
         page++;
         clearList();
-        search();
+        search(search_term, color);
     }
 
 
@@ -120,7 +126,7 @@ async function search() {
 
         page--;
         clearList();
-        search();
+        search(search_term, color);
     }
 
 
